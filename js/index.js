@@ -1,7 +1,6 @@
 $(function(){
     //页面加载执行的方法
     function mounted(){
-        console.log($('.big-nav .active').index())
         // 获取当前导航的索引，计算导航当前页的坐标
         let navIndex=$('.big-nav .active').index();
         let X=$('.big-nav .active').offset().left;
@@ -13,6 +12,18 @@ $(function(){
         }
     }
     mounted();
+
+
+    // 可信时间戳®百科
+    $('.qa-tab li').click(function(){
+        let index=$(this).index();
+        $(this).siblings('li').removeClass('active');
+        $(this).addClass('active');
+        $('.qa-content li').removeClass('active');
+        $('.qa-content li').eq(index).addClass('active');
+    })
+
+
 
 
     var mySwiper = new Swiper ('.swiper', {
