@@ -207,8 +207,32 @@ body {
   width: 100%;
   height: 640px;
 }
+.banner .swiper .swiper-pagination {
+  bottom: 66px;
+}
+.banner .swiper .swiper-pagination .swiper-pagination-bullet {
+  opacity: 1;
+  background-color: #fff;
+  margin: 0 10px;
+}
+.banner .swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #111188;
+}
 .banner .swiper .swiper-wrapper .swiper-slide {
-  background-color: #FF3333;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 640px;
+  background: #0D68F1;
+}
+.banner .swiper .swiper-wrapper .swiper-slide:nth-child(2) {
+  background-color: red;
+}
+.banner .swiper .swiper-wrapper .swiper-slide:nth-child(3) {
+  background-color: green;
+}
+.banner .swiper .swiper-wrapper .swiper-slide:nth-child(4) {
+  background-color: yellow;
 }
 .banner .nav-tab {
   width: 100%;
@@ -1031,6 +1055,9 @@ body {
   width: 100%;
   background-color: #fff;
 }
+.solutions .content .right .content .tab-box .tab-content .section {
+  display: none;
+}
 .solutions .content .right .content .tab-box .tab-content .section ul {
   display: flex;
   justify-content: space-between;
@@ -1045,6 +1072,9 @@ body {
   overflow: hidden;
   white-space: nowrap;
   word-break: break-all;
+}
+.solutions .content .right .content .tab-box .tab-content .active {
+  display: block;
 }
 .encyclopaedic {
   width: 1420px;
@@ -1252,6 +1282,12 @@ body {
   margin-right: 6px;
 }
 .encyclopaedic .content .right .everybody-qa-wrap ul li a strong {
+  width: 0;
+  flex: 1;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
   color: #666666;
 }
 .encyclopaedic .content .right .everybody-qa-wrap ul li a strong sup {
@@ -1318,11 +1354,13 @@ body {
 .cases .content .left .cases-tab-wrap .tab-nav {
   display: flex;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 80px;
+  position: relative;
 }
 .cases .content .left .cases-tab-wrap .tab-nav li {
   cursor: pointer;
   height: 102px;
+  z-index: 2;
 }
 .cases .content .left .cases-tab-wrap .tab-nav li strong {
   text-align: center;
@@ -1334,13 +1372,27 @@ body {
   font-size: 20px;
   color: #333;
 }
+.cases .content .left .cases-tab-wrap .tab-nav li:hover {
+  color: #7488BD;
+}
+.cases .content .left .cases-tab-wrap .tab-nav .active strong {
+  color: #7488BD;
+  border: none;
+}
+.cases .content .left .cases-tab-wrap .tab-nav .valley {
+  position: absolute;
+  z-index: 1;
+  width: 326px;
+  height: 76px;
+  background-image: url(../images/valley.png);
+}
 .cases .content .left .cases-tab-wrap .tab-content .tab-content-item {
   height: 300px;
   overflow: hidden;
-  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   position: relative;
+  display: none;
 }
 .cases .content .left .cases-tab-wrap .tab-content .tab-content-item .news-item {
   display: block;
@@ -1410,6 +1462,9 @@ body {
   right: 0;
   margin: auto;
   z-index: 2;
+}
+.cases .content .left .cases-tab-wrap .tab-content .active {
+  display: flex;
 }
 .cases .content .right {
   width: 300px;

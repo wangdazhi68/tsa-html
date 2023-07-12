@@ -198,10 +198,36 @@ body{
     .swiper {
         width: 100%;
         height: 640px;
+        .swiper-pagination{
+            bottom: 66px;
+            .swiper-pagination-bullet{
+                opacity: 1;
+                background-color: #fff;
+                margin: 0 10px;
+            }
+            .swiper-pagination-bullet-active{
+                background-color: #111188;
+            }
+        }
+        
         .swiper-wrapper{
             .swiper-slide{
-                background-color: #FF3333;
+                font-size: 50px;
+                font-weight: 600;
+                text-align: center;
+                line-height: 640px;
+                background: #0D68F1;
+                &:nth-child(2){
+                    background-color: red;
+                }
+                &:nth-child(3){
+                    background-color: green;
+                }
+                &:nth-child(4){
+                    background-color: yellow;
+                }
             }
+
         }
     }
     .nav-tab{
@@ -1071,6 +1097,7 @@ body{
                         width: 100%;
                         background-color: #fff;
                         .section{
+                            display: none;
                             ul{
                                 display: flex;
                                 justify-content: space-between;
@@ -1086,6 +1113,9 @@ body{
                                     word-break: break-all;
                                 }
                             }
+                        }
+                        .active{
+                            display:block;
                         }
                     }
                 }
@@ -1306,6 +1336,12 @@ body{
                                 margin-right: 6px;
                             }
                             strong{
+                                width:0;
+                                flex:1;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                                word-break: break-all;
                                 color: #666666;
                                 sup{
                                     vertical-align:top !important;
@@ -1381,10 +1417,12 @@ body{
                 .tab-nav{
                     display: flex;
                     justify-content: space-between;
-                    padding:0 40px;
+                    padding:0 80px;
+                    position:relative;
                     li{
                         cursor: pointer;
                         height:102px;
+                        z-index:2;
                         strong{
                             text-align:center;
                             display: block;
@@ -1395,16 +1433,32 @@ body{
                             font-size:20px;
                             color:#333;
                         }
+                        &:hover{
+                            color:#7488BD;
+                        }
+                    }
+                    .active{
+                        strong{
+                            color:#7488BD;
+                            border:none;
+                        }
+                    }
+                    .valley{
+                        position:absolute;
+                        z-index:1;
+                        width:326px;
+                        height:76px;
+                        background-image:url(../images/valley.png);
                     }
                 }
                 .tab-content{
                     .tab-content-item{
                         height: 300px;
                         overflow: hidden;
-                        display:flex;
                         justify-content: space-between;
                         flex-wrap:wrap;
                         position: relative;
+                        display: none;
                         .news-item{
                             display:block;
                             width:49%;
@@ -1482,6 +1536,9 @@ body{
                             margin: auto;
                             z-index: 2;
                         }
+                    }
+                    .active{
+                        display: flex;
                     }
                 }
             }
