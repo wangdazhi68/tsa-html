@@ -64,6 +64,35 @@ $(function(){
         failurelimit : 10, // 图片排序混乱时，值为数字.lazyload默认在找到第一张不在可见区域里的图片时则不再继续加载,但当HTML容器混乱的时候可能出现可见区域内图片并没加载出来的情况,failurelimit意在加载N张可见区域外的图片,以避免出现这个问题.
     });
 
+
+    //证书
+    var mySwiper3 = new Swiper ('.certificate-swiper', {
+        direction: 'horizontal', 
+        loop: true, // 循环模式选项
+        slidesPerView: 'auto',
+        loopedSlides:8,
+        spaceBetween : 78,
+    })
+    var timer=null
+
+    function move(){
+        mySwiper3.slideNext();
+        let realIndex=mySwiper3.realIndex;
+        let slideLength=8;//mySwiper3.slides.length;
+        let width=((realIndex+1)/slideLength);
+        $('.progress').css({'width':width*100+'%'})
+        console.log(width)
+        
+    }
+
+    function scrollSwiper(){
+        clearInterval(timer);
+        timer = null;
+        timer = setInterval(move, 5000);
+    }
+    
+
+
     //页面加载执行的方法
     function mounted(){
         // 获取当前导航的索引，计算导航当前页的坐标
@@ -77,6 +106,8 @@ $(function(){
         }
 
         getCasesType();
+        scrollSwiper();
+        
 
     }
     mounted();

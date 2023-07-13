@@ -210,3 +210,219 @@
   word-break: break-all;
   margin-bottom: 7px;
 }
+.news {
+  width: 1420px;
+  margin: 6px auto 0;
+}
+.news h4 {
+  font-weight: 600;
+  font-size: 28px;
+  color: #003482;
+  margin-bottom: 18px;
+}
+.news .content {
+  display: flex;
+  justify-content: space-between;
+}
+.news .content .left {
+  flex: 1;
+  display: flex;
+}
+.news .content .left .news-one {
+  display: block;
+  width: 620px;
+  box-sizing: border-box;
+  padding-right: 20px;
+  border-right: 2px solid #E5E9EF;
+}
+.news .content .left .news-one dl {
+  display: flex;
+}
+.news .content .left .news-one dl dt {
+  margin-right: 20px;
+}
+.news .content .left .news-one dl dt img {
+  width: 300px;
+  height: 180px;
+}
+.news .content .left .news-one dl dd .title {
+  width: 100%;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 2;
+  -moz-box-orient: vertical;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+.news .content .left .news-one dl dd .title strong {
+  font-weight: 600;
+}
+.news .content .left .news-one dl dd .date {
+  color: #666;
+  margin: 5px 0;
+}
+.news .content .left .news-one dl dd .des {
+  line-height: 25px;
+  width: 100%;
+  color: #666;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  display: -moz-box;
+  -moz-line-clamp: 3;
+  -moz-box-orient: vertical;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  white-space: normal;
+  overflow: hidden;
+}
+.news .content .left .news-one dl dd .tag {
+  padding-top: 13px;
+  padding-left: 21px;
+}
+.news .content .left .news-one dl dd .tag span {
+  display: inline-block;
+  padding: 0px 5px 0px 0px;
+  border: 2px solid #B0BCDA;
+  border-left: none;
+  color: #B0BCDA;
+  margin-right: 29px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  position: relative;
+}
+.news .content .left .news-one dl dd .tag span::before {
+  content: '';
+  display: block;
+  width: 21px;
+  height: 26px;
+  position: absolute;
+  left: -21px;
+  top: -2px;
+  background-image: url(../images/tag-bg1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.news .content .left .news-one dl dd .tag span:hover {
+  border-color: #7488BD;
+  background-color: #7488BD;
+  color: #fff !important;
+}
+.news .content .left .news-one dl dd .tag span:hover::before {
+  background-image: url(../images/tag-bg2.png);
+}
+.news .content .left .news-one:hover dl dd p {
+  color: #7488BD;
+}
+.news .content .left .news-one:hover dl dd p strong {
+  color: #7488BD;
+}
+.news .content .left ol {
+  flex: 1;
+  border-right: 2px solid #E5E9EF;
+}
+.news .content .left ol li {
+  margin-bottom: 12px;
+}
+.news .content .left ol li a {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 14px 0 18px;
+}
+.news .content .left ol li a .title {
+  flex: 1;
+  width: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  word-break: break-all;
+}
+.news .content .left ol li a .title strong {
+  font-weight: 600;
+}
+.news .content .left ol li a .date {
+  text-align: right;
+  width: 90px;
+  color: #666;
+  margin: 5px 0;
+}
+.news .content .left ol li:hover a p {
+  color: #7488BD;
+}
+.news .content .left ol li:hover a p strong {
+  color: #7488BD;
+}
+.news .content .left ol li:last-child {
+  margin-bottom: 0;
+}
+.news .content .right {
+  width: 300px;
+  margin-left: 20px;
+}
+.news .content .right img {
+  width: 300px;
+  height: 180px;
+}
+.flaunt {
+  width: 1220px;
+  margin: 40px auto 0;
+  height: 180px;
+  user-select: none;
+}
+.flaunt .certificate-swiper .swiper-slide {
+  width: auto;
+}
+.flaunt .certificate-swiper .swiper-slide .image {
+  margin-bottom: 3px;
+}
+.flaunt .certificate-swiper .swiper-slide .down {
+  height: 30px;
+  position: relative;
+  left: 0px;
+  top: 3px;
+}
+.flaunt .certificate-swiper .swiper-slide .down .reflection {
+  width: 86px;
+  height: 30px;
+  left: 0px;
+  background: url(../images/certificate1.png) bottom center no-repeat;
+  -webkit-transform: scaleY(-1);
+  -moz-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  -o-transform: scaleY(-1);
+  transform: scaleY(-1);
+  opacity: 0.5;
+}
+.flaunt .certificate-swiper .swiper-slide .down .overlay {
+  position: absolute;
+  width: 86px;
+  height: 30px;
+  top: 0px;
+  background-image: -moz-linear-gradient(top, #ffffff 20%, rgba(255, 255, 255, 0.4) 50%);
+  background-image: -o-linear-gradient(rgba(255, 255, 255, 0.4) 50%, #ffffff 20%);
+  background-image: -webkit-gradient(linear, left bottom, left top, rgba(255, 255, 255, 0.4) 20%, rgba(255, 255, 255, 0) 90%);
+  background: linear-gradient(360deg, #ffffff 20%, rgba(255, 255, 255, 0.4) 100%);
+}
+.flaunt .certificate-swiper .my-swiper-pagination {
+  width: 215px;
+  height: 4px;
+  background-color: #E5E9EF;
+  border-radius: 4px;
+  margin: 5px auto 0;
+}
+.flaunt .certificate-swiper .my-swiper-pagination .progress {
+  width: 0;
+  height: 4px;
+  background-color: #7689BA;
+  border-radius: 4px;
+}
