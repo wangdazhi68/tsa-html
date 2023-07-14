@@ -80,9 +80,7 @@ $(function(){
         let realIndex=mySwiper3.realIndex;
         let slideLength=8;//mySwiper3.slides.length;
         let width=((realIndex+1)/slideLength);
-        $('.progress').css({'width':width*100+'%'})
-        console.log(width)
-        
+        $('.progress').css({'width':width*100+'%'})        
     }
 
     function scrollSwiper(){
@@ -90,7 +88,13 @@ $(function(){
         timer = null;
         timer = setInterval(move, 5000);
     }
-    
+
+
+    // footer
+    $('.qrcodes li').mouseenter(function(){
+        $(this).siblings().removeClass('active');
+        $(this).addClass('active');
+    })
 
 
     //页面加载执行的方法
@@ -112,6 +116,7 @@ $(function(){
     }
     mounted();
 
+    window.addEventListener('resize', mounted)
 
 
 

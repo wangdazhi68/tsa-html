@@ -36,9 +36,6 @@ a {
 a:hover {
   color: #7488BD !important;
 }
-body {
-  padding-bottom: 550px;
-}
 .header {
   width: 100%;
   text-align: center;
@@ -607,6 +604,10 @@ body {
   color: #003482;
   margin-right: 5px;
 }
+.product .top .top-left strong b {
+  font-size: 30px;
+  color: red;
+}
 .product .top .top-right {
   width: 44%;
   padding-top: 6px;
@@ -639,6 +640,7 @@ body {
   text-align: center;
 }
 .product .top .top-right .count-wrap .count dl dt {
+  color: #fff;
   font-size: 16px;
   margin-bottom: 3px;
 }
@@ -727,7 +729,7 @@ body {
   display: flex;
 }
 .product .content .version-heart .left li dl dt {
-  margin-right: 21px;
+  margin-right: 14px;
 }
 .product .content .version-heart .left li dl dt img {
   width: 100px;
