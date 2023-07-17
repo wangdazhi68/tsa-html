@@ -113,12 +113,36 @@
                 
             }
             .scheme-tab-wrap{
+                width: 100%;
+                position: relative;
                 .tab-nav{
-                    display: none;
+                    position: absolute;
+                    padding-left: 2px;
+                    display: flex;
+                    left: 0;
+                    top: 0;
+                    li{
+                        box-sizing: border-box;
+                        cursor: pointer;
+                        padding-top:22px;
+                        height: 55px;
+                        align-items: center;
+                        strong{
+                            font-size: 18px;
+                        }
+                        margin: 0 43px;
+                    }
+                    .active{
+                        strong{
+                            color: #fff;
+                        }
+                    }
                 }
                 .tab-content{
                     .tab-content-item{
+                        display: none;
                         padding: 0 66px;
+                        padding-top: 74px;
                         .title{
                             margin-bottom: 5px;
                             strong{
@@ -192,6 +216,12 @@
                                 }
                             }
                         }
+                        &:nth-child(1){
+                            background-image: url("../images/scheme-bg2.png");
+                        }
+                    }
+                    .active{
+                        display: block;
                     }
                 }
             }
@@ -324,13 +354,13 @@
                                     position: absolute;
                                     left: -21px;
                                     top: -2px;
-                                    background-image: url(../images/tag-bg1.png);
+                                    background-image: url("../images/tag-bg1.png");
                                     background-repeat: no-repeat;
                                     background-position: center;
                                 }
                                 &:hover{
                                     &::before{
-                                        background-image: url(../images/tag-bg2.png);
+                                        background-image: url("../images/tag-bg2.png");
                                     }
                                     border-color: #7488BD;
                                     background-color: #7488BD;
@@ -431,7 +461,7 @@
                     width:86px;
                     height:30px;
                     left:0px;
-                    background:url(../images/certificate1.png) bottom center no-repeat; 
+                    background:url("../images/certificate1.png") bottom center no-repeat; 
                     -webkit-transform: scaleY(-1); 
                     -moz-transform: scaleY(-1); 
                     -ms-transform: scaleY(-1); 
@@ -653,7 +683,7 @@
                                 content: '';
                                 width: 10px;
                                 height: 54px;
-                                background-image: url(../images/qrcode-arrow.png);
+                                background-image: url("../images/qrcode-arrow.png");
                             }
                         }
                         .qrcode-container{
@@ -750,4 +780,105 @@
             }
         }
     }
+}
+
+.fixed-tool{
+    display: none;
+    z-index: 9999;
+    position: fixed;
+    right: 0;
+    bottom:100px;
+    width: 108px;
+    height: 374px;
+    background-image: url('../images/fixed-tool.png');
+    text-align:center;
+    ul{
+        height:385px;
+        display: flex;
+        flex-direction:column;
+        padding-top: 16px;
+        li{
+            cursor: pointer;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 17px;
+            position: relative;
+            .show{
+                margin-left: 12px;
+                width:60px;
+                padding-bottom: 9px;
+                border-bottom: 1px solid #666666;
+                p{
+                    font-size: 12px;
+                    color:#003482;
+                }
+            }
+            .hide{
+                display:none;
+                z-index: 2;
+                position: absolute;
+                top: -17px;
+                left:-110px;
+                width: 150px;
+                height: 134px;
+                box-sizing: border-box;
+                background-image:url("../images/bubbles2.png");
+                padding:27px 0 0 11px;
+                .bubbles{
+                    width:110px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    img{
+                        display: block;
+                        margin-top: 24px;
+                        width: 62px;
+                        height: 62px;
+                        margin:0 auto;
+                    }
+                    p{
+                        margin-top: 3px;
+                        color: #003482;
+                        font-size: 12px;
+                    }
+                }
+                
+            }
+            &:nth-child(2){
+                .hide{
+                    top:8px;
+                    left: -234px;
+                    background-image:url("../images/400phone3.png");
+                    width: 275px;
+                    height: 84px;
+                }
+            }
+            &:nth-child(3){
+                padding-top: 28px;
+            }
+            &:last-child{
+                .show{
+                    border: none;
+                }
+            }
+            &:hover{
+                .hide{
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.go-top{
+    display: none;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-image: url("../images/scroll-icon.png");
+    position:fixed;
+    right: 40px;
+    bottom: 19px;
 }

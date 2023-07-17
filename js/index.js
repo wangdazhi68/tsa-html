@@ -32,7 +32,6 @@ $(function(){
     function getCasesType(){
         //获取当前典型案例tab索引，计算tab坐标
         let activeX=$('.cases .tab-nav .active').position().left;
-        console.log(activeX);
         let activeWidth=$('.cases .tab-nav .active').width();
         $('.valley').css({"top":'0',"left":(activeX+activeWidth/2-163)+'px'})
     }
@@ -44,6 +43,7 @@ $(function(){
         $('.cases .tab-content .tab-content-item').eq(index).addClass('active');
         getCasesType();
     })
+    
 
     // 可信时间戳®微课堂
     var mySwiper2 = new Swiper ('.video-swiper', {
@@ -52,6 +52,26 @@ $(function(){
         slidesPerView : 3,
         spaceBetween : 40,
     }) 
+
+
+    // 可信时间戳®行业解决方案
+    $('.scheme .tab-nav li').click(function(){
+        let bgList=[
+            './images/scheme-bg1.png',
+            './images/scheme-bg2.png',
+            './images/scheme-bg3.png',
+            './images/scheme-bg4.png',
+            './images/scheme-bg5.png',
+            './images/scheme-bg6.png',
+        ]
+        let index=$(this).index();
+        $(this).siblings('li').removeClass('active');
+        $(this).addClass('active');
+        $('.scheme .tab-content .tab-content-item').removeClass('active');
+        $('.scheme .tab-content .tab-content-item').eq(index).addClass('active');
+        $(".scheme .tab-content .tab-content-item").eq(index).css({"background-image":"url("+bgList[index]+")"})
+    })
+
      
 
     // 图片懒加载配置项
@@ -95,6 +115,22 @@ $(function(){
         $(this).siblings().removeClass('active');
         $(this).addClass('active');
     })
+
+    //返回顶部
+    var showDistance= $('.solutions').offset().top
+    $(window).scroll(function(){                 //修改goToTop按钮的top距离
+        if($(this).scrollTop() > showDistance){
+            $('.go-top').fadeIn();
+            $('.fixed-tool').fadeIn();
+        }else{
+            $('.go-top').fadeOut();
+            $('.fixed-tool').fadeOut();
+        }
+    });
+    $('.go-top').click(function(){
+        $('html ,body').animate({scrollTop: 0}, 300);
+        return false;
+    });
 
 
     //页面加载执行的方法
